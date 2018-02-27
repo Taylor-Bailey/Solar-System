@@ -57,3 +57,9 @@ capitalPlanetsWithE.forEach(function(planet) {
 });
 // Use the reduce method to create a sentence from the words in the following array
 const words = ["The", "early", "bird", "might", "get", "the", "worm", "but", "the", "second", "mouse", "gets", "the", "cheese"]
+
+let wordBuilder = (word, anotherWord) => {return word + " " + anotherWord;}
+let period = (o) => {return o + ".";}
+
+let arrayToSentence = words.reduce(wordBuilder);
+printDiv.innerHTML += `<p id="sentence">${period(arrayToSentence)}</p>`;
