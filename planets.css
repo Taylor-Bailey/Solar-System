@@ -15,3 +15,9 @@
     border-radius: 5px;
     padding: 1em;
 }
+
+#sentence {
+    border: solid 1px rgb(240, 255, 71);
+    border-radius: 5px;
+    padding: 1em;
+}
