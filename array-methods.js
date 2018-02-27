@@ -16,7 +16,7 @@ let printDiv = document.getElementById("planets");
 
 // FOR-EACH METHOD //
 planets.forEach(function(planet) {
-    printDiv.innerHTML += `<p>${planet}</p>`
+    printDiv.innerHTML += `<p id ="freach">${planet}</p>`
 });
 
 
@@ -27,7 +27,13 @@ planets.forEach(function(planet) {
 
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase
 */
+let capitalPlanets = planets.map(function(terraform){
+    return terraform.charAt(0).toUpperCase() + terraform.slice(1);
+});
 
+capitalPlanets.forEach(function(planet) {
+    printDiv.innerHTML += `<p id="cap">${planet}</p>`
+});
 
 
 /*
@@ -38,6 +44,16 @@ planets.forEach(function(planet) {
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes
 */
 
+let planetsWithE = (planet) => { for (var j = 0; j < planet.length; j++){
+    if (planet[j].includes("e") === true || planet[j].includes("E") === true){
+        return planet[j];
+    }
+}}
 
+let capitalPlanetsWithE = capitalPlanets.filter(planetsWithE);
+
+capitalPlanetsWithE.forEach(function(planet) {
+    printDiv.innerHTML += `<p id = "e">${planet}</p>`
+});
 // Use the reduce method to create a sentence from the words in the following array
 const words = ["The", "early", "bird", "might", "get", "the", "worm", "but", "the", "second", "mouse", "gets", "the", "cheese"]

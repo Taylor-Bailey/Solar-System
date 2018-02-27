@@ -1,0 +1,17 @@
+#freach {
+    border: solid 1px tomato;
+    border-radius: 5px;
+    padding: 1em;
+}
+
+#cap {
+    border: solid 1px rgb(71, 117, 255);
+    border-radius: 5px;
+    padding: 1em;
+}
+
+#e {
+    border: solid 1px rgb(71, 255, 151);
+    border-radius: 5px;
+    padding: 1em;
+}
