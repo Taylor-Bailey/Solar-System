@@ -55,11 +55,23 @@ let capitalPlanetsWithE = capitalPlanets.filter(planetsWithE);
 capitalPlanetsWithE.forEach(function(planet) {
     printDiv.innerHTML += `<p id = "e">${planet}</p>`
 });
+
+
 // Use the reduce method to create a sentence from the words in the following array
 const words = ["The", "early", "bird", "might", "get", "the", "worm", "but", "the", "second", "mouse", "gets", "the", "cheese"]
 
-let wordBuilder = (word, anotherWord) => {return word + " " + anotherWord;}
-let period = (o) => {return o + ".";}
+// JOIN METHOD
+// let wordsJoin = words.join(" ");
+// printDiv.innerHtml = `<p>${wordsJoin + "."}</p>`;
 
-let arrayToSentence = words.reduce(wordBuilder);
-printDiv.innerHTML += `<p id="sentence">${period(arrayToSentence)}</p>`;
+// REDUCE METHOD
+
+// Function that passes two parameters (these will be our words from the array), returns two words, and adds(+) a space (" ") between them.
+let wordBuilder = (word, anotherWord) => {return word + " " + anotherWord;}
+
+// Variable that takes the array [words] and uses the reduce method while passing the function wordBuild as a parameter.  Then adds a period "."  at the end.
+let arrayToSentence = words.reduce(wordBuilder) + ".";
+// console.log(arrayToSentence);
+
+// Template String Literal that creates DOM element <p> and prints the sentence
+printDiv.innerHTML += `<p id="sentence">${arrayToSentence}</p>`;
